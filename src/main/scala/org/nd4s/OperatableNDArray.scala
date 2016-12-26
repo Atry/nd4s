@@ -127,7 +127,7 @@ trait OperatableNDArray[A <: INDArray] {
 
   def sumT[B](implicit ev: NDArrayEvidence[A,B]): B = ev.sum(underlying)
 
-  def meanT[B](implicit ev: NDArrayEvidence[A,B]): B = ev.sum(underlying)
+  def meanT[B](implicit ev: NDArrayEvidence[A,B]): B = ev.sum(underlying) / underlying.length
 
   def normMaxT[B](implicit ev: NDArrayEvidence[A,B]): B = ev.normMax(underlying)
 
